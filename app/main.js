@@ -1,23 +1,39 @@
+//vendor
+import 'jquery';
+import './vendor/semantic-ui/semantic.min.css';
+import './vendor/semantic-ui/semantic.min';
+//end vendor
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import reducers from './reducers/Reducers';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {logger} from './logger/Logger';
+import {Template, Home, NotFound} from './views';
+
+//router
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
+
 
 const store = applyMiddleware(logger, thunk)(createStore)(reducers);
+const history = syncHistoryWithStore(browserHistory, store);
 
-let Test = class extends React.Component {
+let App = class extends React.Component {
     render() {
         return(
             <Provider store={store}>
-                <div>
-                    <h1>Hello</h1>
-                </div>
+                <Router history={history}>
+                    <Route path="/" component={Template}>
+                        <IndexRoute component={Home} />
+                        <Route path="/*" component={NotFound} />
+                    </Route>
+                </Router>
             </Provider>
         );
     }
 };
 
-ReactDOM.render(<Test />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
