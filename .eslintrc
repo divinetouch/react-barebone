@@ -1,0 +1,48 @@
+{
+    "rules": {
+        "indent": [
+            2,
+            4,
+            { "SwitchCase": 1 }
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "no-console": 0,
+        "no-unused-vars": [1, {"ignore": ["React"]}],
+        "react/jsx-uses-react": 1
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
+    "extends": "eslint:recommended",
+    "plugins": [
+        "react"
+    ],
+    "globals": {
+        "React": true,
+        "describe": true,
+        "expect": true,
+        "it": true,
+        "beforeEach": true,
+        "before": true,
+        "after": true,
+        "afterEach": true
+    },
+     "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true,
+            "modules": true
+        }
+    }
+}
