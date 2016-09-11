@@ -1,0 +1,3 @@
+export default {
+    APPLICATION_STATE: 'APPLICATION_STATE'
+};
