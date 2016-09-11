@@ -42,7 +42,14 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"',
+            ENV: require(path.resolve('env/production'))
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin()
     ],
     eslint: {
         configFile: '/.eslintrc'
