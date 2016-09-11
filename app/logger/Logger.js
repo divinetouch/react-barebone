@@ -1,8 +1,10 @@
 export const logger = store => next => action => {
     let result = next(action);
     if(ENV.debug) {
+        console.group(action.type);
         console.info('dispatching', action);
-        console.log('next state', store.getState());
+        console.info('next state', store.getState());
+        console.groupEnd(action.type);
     }
     return result;
 };
