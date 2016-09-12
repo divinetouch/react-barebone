@@ -18,7 +18,6 @@ import {Template, Home, NotFound} from './views';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 
-
 const store = applyMiddleware(logger, thunk)(createStore)(reducers);
 const history = syncHistoryWithStore(browserHistory, store);
 
