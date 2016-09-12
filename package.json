@@ -9,7 +9,7 @@
     "clean": "cd dist && rm !(*.html) || true",
     "build-dev": "npm run clean && webpack --config webpack.dev.config.js",
     "build-staging": "npm run clean && webpack --config webpack.staging.config.js",
-    "build-prod": "npm run clean && webpack --config webpack.prod.config.js"
+    "build-prod": "npm run clean && webpack -p --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
