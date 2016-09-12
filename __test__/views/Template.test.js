@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom';
 // import renderer from 'react-test-renderer';
 import TestUtils from 'react-addons-test-utils';
 import Template from '../../app/views/Template.js';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import reducers from '../../app/reducers/Reducers';
 
 describe('template', () => {
+    let store = applyMiddleware(thunk)(createStore)(reducers);
+    const component = TestUtils.renderIntoDocument(<Provider store={store}><Template /></Provider>);
+
     /**
      * Should be able to run this after React version 15.4.0
      */
@@ -15,14 +22,12 @@ describe('template', () => {
     // });
 
     it('should automatically select home as active', () => {
-        const component = TestUtils.renderIntoDocument(<Template />);
         let activeItem = TestUtils.findRenderedDOMComponentWithClass(component, 'active');
         expect(activeItem.textContent).toEqual('Home');
 
     });
 
     it('should update active tab', () => {
-        const component = TestUtils.renderIntoDocument(<Template />);
         let allItems = TestUtils.scryRenderedDOMComponentsWithClass(component, 'item');
         allItems.forEach((item) => {
             if(item.textContent === 'Messages') {

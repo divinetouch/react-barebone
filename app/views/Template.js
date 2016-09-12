@@ -1,4 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import STATE_NAME from '../constants/StateName';
+
+let mapStateToProps = (state) => ({
+    appState: state[STATE_NAME.APPLICATION_STATE]
+});
 
 let Template = class extends Component {
     constructor(props) {
@@ -47,4 +53,4 @@ let Template = class extends Component {
     }
 };
 
-export default Template;
+export default connect(mapStateToProps)(Template);
