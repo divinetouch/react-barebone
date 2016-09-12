@@ -2,6 +2,7 @@
 import 'jquery';
 import './vendor/semantic-ui/semantic.min.css';
 import './vendor/semantic-ui/semantic.min';
+import './styles/app.scss';
 //end vendor
 
 import React from 'react';

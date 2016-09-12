@@ -23,7 +23,7 @@ let Template = class extends Component {
     render() {
         return (
             <div className="ui container">
-                <div className="ui secondary pointing menu" ref="menu">
+                <div className="ui secondary pointing menu segment" ref="menu">
                     <a className={this.state.selected === 'home'? 'active item': 'item'} onClick={this._selected.bind(this, 'home')}>
                         Home
                     </a>
