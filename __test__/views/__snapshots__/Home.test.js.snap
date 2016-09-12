@@ -1,0 +1,7 @@
+exports[`test should produce a welcom to home page div 1`] = `
+<div>
+  <h1>
+    Welcome to Home page
+  </h1>
+</div>
+`;

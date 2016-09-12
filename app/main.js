@@ -5,7 +5,7 @@ import './vendor/semantic-ui/semantic.min';
 import './styles/app.scss';
 //end vendor
 
-import React from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
 import reducers from './reducers/Reducers';
 import {Provider} from 'react-redux';
@@ -21,7 +21,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 const store = applyMiddleware(logger, thunk)(createStore)(reducers);
 const history = syncHistoryWithStore(browserHistory, store);
 
-let App = class extends React.Component {
+let App = class extends Component {
     render() {
         return(
             <Provider store={store}>
