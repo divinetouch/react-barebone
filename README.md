@@ -3,7 +3,7 @@
 This is a simple/barebone React.JS project that can be used as a starting point. 
 
 I use [Semantic-UI](http://semantic-ui.com/) framework in this project
-but it can be easily removed or swapped out with React-Bootstrap or Zurb Foundation. I like Semantic-UI because it is simaple
+but it can be easily removed or swapped out with React-Bootstrap or Zurb Foundation. I like Semantic-UI because it is simple
 to read and understand. If you haven't used Semantic-UI, please give it a try.
 
 # How to set up and run the project
